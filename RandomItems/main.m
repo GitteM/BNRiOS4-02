@@ -39,10 +39,9 @@ int main(int argc, const char * argv[])
         }
         
         BNRItem *item = [[BNRItem alloc]init];
-
+        
         // This creates an NSString, "Red Sofa" and gives it to the BNRItem
         item.itemName = @"Red Sofa";
-        
         
         // This creates an NSString, "A1B2C" and gives it to the BNRItem
         item.serialNumber = @"A1B2C";
@@ -50,12 +49,10 @@ int main(int argc, const char * argv[])
         // This sends the value 100 to be used as the valueInDollars of this BNRItem
         item.valueInDollars = 100;
         
-        NSLog(@"%@ %@ %@ %d", item.itemName, item.dateCreated, item.serialNumber, item.valueInDollars);
+        NSLog(@"%@", item);
         
         // Destroy the mutable array object
-        
         items = nil;
-        
         
     }
     return 0;
