@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface BNRItem : NSObject
+
+#pragma mark - 1. Instance Variables
+
 {
     NSString *_itemName;
     NSString *_serialNumber;
@@ -27,11 +30,22 @@
 
 - (NSDate *)dateCreated;
 
+
+#pragma mark - 2. Class Methods
+
++ (instancetype)randomItem;
+
+
+#pragma mark - 3. Initializers
+
 // Designated initializer for BNRItem
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
                     serialNumber:(NSString*)sNumber;
 
 - (instancetype)initWithItemName:(NSString *)name;
+
+#pragma mark - 4. Other Instance Methods
+
 
 @end
