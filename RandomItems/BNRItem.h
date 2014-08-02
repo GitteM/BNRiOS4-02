@@ -41,9 +41,12 @@
 // Designated initializer for BNRItem
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
-                    serialNumber:(NSString*)sNumber;
+                    serialNumber:(NSString *)sNumber;
 
 - (instancetype)initWithItemName:(NSString *)name;
+
+- (instancetype)initWithItemName:(NSString *)name
+                    serialNumber:(NSString *)sNumber;
 
 #pragma mark - 4. Other Instance Methods
 

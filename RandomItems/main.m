@@ -24,9 +24,10 @@ int main(int argc, const char * argv[])
         for (BNRItem *item in items) {
             NSLog(@"%@", item);
         }
-     
-        NSLog(@"Chapter 1, Bronze Challenge: Bug Finding %@", items[10]);
-
+        
+        BNRItem *anotherInitializer = [[BNRItem alloc] initWithItemName:@"AnotherItem" serialNumber:@"A1B2C"];
+        NSLog(@"Chapter 1, Silver Challenge: Another Initializer: \n %@", anotherInitializer);
+        
         items = nil;
     }
     
