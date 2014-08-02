@@ -25,6 +25,8 @@ int main(int argc, const char * argv[])
             NSLog(@"%@", item);
         }
      
+        NSLog(@"Chapter 1, Bronze Challenge: Bug Finding %@", items[10]);
+
         items = nil;
     }
     

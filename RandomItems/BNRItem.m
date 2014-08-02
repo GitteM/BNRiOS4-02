@@ -71,8 +71,8 @@
     // Note that NSInteger is not an object, but a type definition for long
     
     NSString *randomName = [NSString stringWithFormat:@"%@ %@",
-                            [randomAdjectives objectAtIndex:adjectiveIndex],
-                            [randomNounList objectAtIndex:nounIndex]];
+                            randomAdjectives[adjectiveIndex],
+                            randomNounList[nounIndex]];
     
     int randomValue = arc4random() % 100;
     
