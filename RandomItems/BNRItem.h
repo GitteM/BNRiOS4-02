@@ -17,6 +17,10 @@
     NSString *_serialNumber;
     int _valueInDollars;
     NSDate *_dateCreated;
+    
+    // introducing a strong reference cycle
+    BNRItem *_containedItem;
+    BNRItem *_container;
 }
 
 - (void)setItemName:(NSString *)str;
@@ -30,6 +34,11 @@
 
 - (NSDate *)dateCreated;
 
+- (void)setContainedItem:(BNRItem *)item;
+- (BNRItem *)containedItem;
+
+- (void)setContainer:(BNRItem *)item;
+- (BNRItem *)container;
 
 #pragma mark - 2. Class Methods
 
