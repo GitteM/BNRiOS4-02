@@ -39,6 +39,7 @@
 #pragma mark - 3. Initializers
 
 // Designated initializer for BNRItem
+
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
                     serialNumber:(NSString *)sNumber;

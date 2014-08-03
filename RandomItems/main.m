@@ -8,29 +8,34 @@
 
 #import <Foundation/Foundation.h>
 #import "BNRItem.h"
+#import "BNRContainer.h"
 
 int main(int argc, const char * argv[])
 {
-    
     @autoreleasepool {
         
-        NSMutableArray *items = [[NSMutableArray alloc]init];
-        
+        BNRContainer *containerOne = [[BNRContainer alloc] initWithContainerName:@"ContainerOne"
+                                                                  containerValue:30
+                                                                  containerItems:[[NSMutableArray alloc]init]];
         for (int i = 0; i < 10; i++) {
             BNRItem *item = [BNRItem randomItem];
-            [items addObject:item];
+           [containerOne addItemToContainer:item];
         }
         
-        for (BNRItem *item in items) {
-            NSLog(@"%@", item);
-        }
+        BNRContainer *containerTwo = [[BNRContainer alloc]initWithContainerName:@"ContainerTwo"
+                                                                 containerValue:80
+                                                                 containerItems:[[NSMutableArray alloc]init]];
         
-        BNRItem *anotherInitializer = [[BNRItem alloc] initWithItemName:@"AnotherItem" serialNumber:@"A1B2C"];
-        NSLog(@"Chapter 1, Silver Challenge: Another Initializer: \n %@", anotherInitializer);
+        BNRItem *itemForContainerTwo = [[BNRItem alloc]initWithItemName:@"Stuffy Toy"
+                                                         valueInDollars:20
+                                                           serialNumber:@"ASDFAG"];
         
-        items = nil;
-    }
-    
+        [containerTwo addContainerToContainer:containerOne];
+        [containerTwo addItemToContainer:itemForContainerTwo];
+        
+        NSLog(@"%@", containerTwo);
+        
+     }
     return 0;
 }
 
