@@ -138,4 +138,8 @@
     return descriptionString;
 }
 
+- (void)dealloc {
+    NSLog(@"Destroyed: %@", self);
+}
+
 @end

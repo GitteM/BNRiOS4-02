@@ -25,9 +25,7 @@ int main(int argc, const char * argv[])
             NSLog(@"%@", item);
         }
         
-        BNRItem *anotherInitializer = [[BNRItem alloc] initWithItemName:@"AnotherItem" serialNumber:@"A1B2C"];
-        NSLog(@"Chapter 1, Silver Challenge: Another Initializer: \n %@", anotherInitializer);
-        
+        NSLog(@"Setting items to nil...");
         items = nil;
     }
     
