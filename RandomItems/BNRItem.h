@@ -19,8 +19,8 @@
     NSDate *_dateCreated;
     
     // introducing a strong reference cycle
-    BNRItem *_containedItem;
-    BNRItem *_container;
+    BNRItem *_containedItem; // parent
+    __weak BNRItem *_container; // child
 }
 
 - (void)setItemName:(NSString *)str;
