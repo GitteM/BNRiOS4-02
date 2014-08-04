@@ -40,22 +40,20 @@
     return self;
 }
 
+- (instancetype)initWithItemName:(NSString *)name
+                    serialNumber:(NSString *)sNumber {
+    return [self initWithItemName:name valueInDollars:0 serialNumber:sNumber];
+}
+
 - (instancetype)initWithItemName:(NSString *)name {
     return [self initWithItemName:name
                    valueInDollars:0
                      serialNumber:@""];
 }
 
-- (instancetype)initWithItemName:(NSString *)name
-                    serialNumber:(NSString *)sNumber {
-    return [self initWithItemName:name valueInDollars:0 serialNumber:sNumber];
-}
-
 - (instancetype)init {
     return [self initWithItemName:@"Item"];
 }
-
-
 
 #pragma mark - Class/Convenience Methods
 
@@ -96,54 +94,11 @@
     return newItem;
 }
 
-#pragma mark - Getters and Setters
+#pragma mark - Custom Setters and Getters
 
-- (void)setItemName:(NSString *)str {
-    _itemName = str;
-}
-
-- (NSString *)itemName {
-    return _itemName;
-}
-
-- (void)setSerialNumber:(NSString *)str {
-    _serialNumber = str;
-}
-
-- (NSString *)serialNumber {
-    return _serialNumber;
-}
-
-- (void)setValueInDollars:(int)v {
-    _valueInDollars = v;
-}
-
-- (int)valueInDollars {
-    return _valueInDollars;
-}
-
-- (NSDate *)dateCreated {
-    return _dateCreated;
-}
-
-- (void)setContainedItem:(BNRItem *)item {
-    _containedItem = item;
-    // When given an item to contain
-    // the contained item will be given
-    // a pointer to its container
-    item.container = self;
-}
-
-- (BNRItem *)containedItem {
-    return _containedItem;
-}
-
-- (void)setContainer:(BNRItem *)item {
-    _container = item;
-}
-
-- (BNRItem *)container {
-    return _container;
+- (void)setContainedItem:(BNRItem *)containedItem {
+    _containedItem = containedItem;
+    self.containedItem.container = self;
 }
 
 #pragma mark - Overriding the Description method

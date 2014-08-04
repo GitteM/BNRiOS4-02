@@ -10,42 +10,21 @@
 
 @interface BNRItem : NSObject
 
-#pragma mark - 1. Instance Variables
+#pragma mark - Properties
 
-{
-    NSString *_itemName;
-    NSString *_serialNumber;
-    int _valueInDollars;
-    NSDate *_dateCreated;
-    
-    // introducing a strong reference cycle
-    BNRItem *_containedItem; // parent
-    __weak BNRItem *_container; // child
-}
+@property (nonatomic, weak) BNRItem *container; // parent backpack
+@property (nonatomic, strong) BNRItem *containedItem; // child calculator
 
-- (void)setItemName:(NSString *)str;
-- (NSString *)itemName;
+@property (nonatomic, copy) NSString *itemName;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) int valueInDollars;
+@property (nonatomic, readonly, strong) NSDate *dateCreated;
 
-- (void)setSerialNumber:(NSString *)str;
-- (NSString *)serialNumber;
-
-- (void)setValueInDollars:(int)v;
-- (int)valueInDollars;
-
-- (NSDate *)dateCreated;
-
-- (void)setContainedItem:(BNRItem *)item;
-- (BNRItem *)containedItem;
-
-- (void)setContainer:(BNRItem *)item;
-- (BNRItem *)container;
-
-#pragma mark - 2. Class Methods
+#pragma mark - Class Methods
 
 + (instancetype)randomItem;
 
-
-#pragma mark - 3. Initializers
+#pragma mark - Initializers
 
 // Designated initializer for BNRItem
 - (instancetype)initWithItemName:(NSString *)name
@@ -54,10 +33,6 @@
 
 - (instancetype)initWithItemName:(NSString *)name;
 
-- (instancetype)initWithItemName:(NSString *)name
-                    serialNumber:(NSString *)sNumber;
-
-#pragma mark - 4. Other Instance Methods
-
+#pragma mark - Other Instance Methods
 
 @end
